@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4885903-4771-4958-ABF7-9626737D95C0}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCFrame</RootNamespace>
+    <AssemblyName>MVCFrame</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LitJson">
+      <HintPath>..\Lib\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.30506.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BaseInfo\UserInfoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Models\UserUtil.cs" />
+    <Compile Include="Util\SessionUtil.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\autocompleted\bg.gif" />
+    <Content Include="Content\autocompleted\indicator.gif" />
+    <Content Include="Content\autocompleted\jquery.autocomplete.css" />
+    <Content Include="Content\autocompleted\jquery.autocomplete.js" />
+    <Content Include="Content\autocompleted\jquery.autocomplete.min.js" />
+    <Content Include="Content\jeasyui\easyloader.js" />
+    <Content Include="Content\jeasyui\jquery-1.8.0.min.js" />
+    <Content Include="Content\jeasyui\jquery.easyui.min.js" />
+    <Content Include="Content\jeasyui\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.accordion.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.calendar.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.combo.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.combobox.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.combogrid.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.combotree.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.datagrid.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.datebox.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.datetimebox.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.dialog.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.draggable.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.droppable.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.form.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.layout.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.linkbutton.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.menu.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.menubutton.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.messager.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.numberbox.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.numberspinner.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.pagination.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.panel.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.parser.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.progressbar.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.propertygrid.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.resizable.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.searchbox.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.slider.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.spinner.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.splitbutton.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.tabs.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.timespinner.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.tree.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.treegrid.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.validatebox.js" />
+    <Content Include="Content\jeasyui\plugins\jquery.window.js" />
+    <Content Include="Content\jeasyui\themes\black\accordion.css" />
+    <Content Include="Content\jeasyui\themes\black\calendar.css" />
+    <Content Include="Content\jeasyui\themes\black\combo.css" />
+    <Content Include="Content\jeasyui\themes\black\combobox.css" />
+    <Content Include="Content\jeasyui\themes\black\datagrid.css" />
+    <Content Include="Content\jeasyui\themes\black\datebox.css" />
+    <Content Include="Content\jeasyui\themes\black\dialog.css" />
+    <Content Include="Content\jeasyui\themes\black\easyui.css" />
+    <Content Include="Content\jeasyui\themes\black\images\accordion_arrows.png" />
+    <Content Include="Content\jeasyui\themes\black\images\blank.gif" />
+    <Content Include="Content\jeasyui\themes\black\images\calendar_arrows.png" />
+    <Content Include="Content\jeasyui\themes\black\images\combo_arrow.png" />
+    <Content Include="Content\jeasyui\themes\black\images\datagrid_icons.png" />
+    <Content Include="Content\jeasyui\themes\black\images\datebox_arrow.png" />
+    <Content Include="Content\jeasyui\themes\black\images\layout_arrows.png" />
+    <Content Include="Content\jeasyui\themes\black\images\linkbutton_bg.png" />
+    <Content Include="Content\jeasyui\themes\black\images\loading.gif" />
+    <Content Include="Content\jeasyui\themes\black\images\menu_arrows.png" />
+    <Content Include="Content\jeasyui\themes\black\images\messager_icons.png" />
+    <Content Include="Content\jeasyui\themes\black\images\pagination_icons.png" />
+    <Content Include="Content\jeasyui\themes\black\images\panel_tools.png" />
+    <Content Include="Content\jeasyui\themes\black\images\searchbox_button.png" />
+    <Content Include="Content\jeasyui\themes\black\images\slider_handle.png" />
+    <Content Include="Content\jeasyui\themes\black\images\spinner_arrows.png" />
+    <Content Include="Content\jeasyui\themes\black\images\tabs_icons.png" />
+    <Content Include="Content\jeasyui\themes\black\images\tree_icons.png" />
+    <Content Include="Content\jeasyui\themes\black\images\validatebox_arrows.png" />
+    <Content Include="Content\jeasyui\themes\black\images\validatebox_warning.png" />
+    <Content Include="Content\jeasyui\themes\black\layout.css" />
+    <Content Include="Content\jeasyui\themes\black\linkbutton.css" />
+    <Content Include="Content\jeasyui\themes\black\menu.css" />
+    <Content Include="Content\jeasyui\themes\black\menubutton.css" />
+    <Content Include="Content\jeasyui\themes\black\messager.css" />
+    <Content Include="Content\jeasyui\themes\black\pagination.css" />
+    <Content Include="Content\jeasyui\themes\black\panel.css" />
+    <Content Include="Content\jeasyui\themes\black\progressbar.css" />
+    <Content Include="Content\jeasyui\themes\black\propertygrid.css" />
+    <Content Include="Content\jeasyui\themes\black\searchbox.css" />
+    <Content Include="Content\jeasyui\themes\black\slider.css" />
+    <Content Include="Content\jeasyui\themes\black\spinner.css" />
+    <Content Include="Content\jeasyui\themes\black\splitbutton.css" />
+    <Content Include="Content\jeasyui\themes\black\tabs.css" />
+    <Content Include="Content\jeasyui\themes\black\tree.css" />
+    <Content Include="Content\jeasyui\themes\black\validatebox.css" />
+    <Content Include="Content\jeasyui\themes\black\window.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\accordion.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\calendar.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\combo.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\combobox.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\datagrid.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\datebox.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\dialog.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\easyui.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\blank.gif" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\loading.gif" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\validatebox_arrows.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Content\jeasyui\themes\bootstrap\layout.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\linkbutton.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\menu.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\menubutton.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\messager.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\pagination.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\panel.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\progressbar.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\propertygrid.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\searchbox.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\slider.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\spinner.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\splitbutton.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\tabs.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\tree.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\validatebox.css" />
+    <Content Include="Content\jeasyui\themes\bootstrap\window.css" />
+    <Content Include="Content\jeasyui\themes\default\accordion.css" />
+    <Content Include="Content\jeasyui\themes\default\calendar.css" />
+    <Content Include="Content\jeasyui\themes\default\combo.css" />
+    <Content Include="Content\jeasyui\themes\default\combobox.css" />
+    <Content Include="Content\jeasyui\themes\default\datagrid.css" />
+    <Content Include="Content\jeasyui\themes\default\datebox.css" />
+    <Content Include="Content\jeasyui\themes\default\dialog.css" />
+    <Content Include="Content\jeasyui\themes\default\easyui.css" />
+    <Content Include="Content\jeasyui\themes\default\images\accordion_arrows.png" />
+    <Content Include="Content\jeasyui\themes\default\images\blank.gif" />
+    <Content Include="Content\jeasyui\themes\default\images\calendar_arrows.png" />
+    <Content Include="Content\jeasyui\themes\default\images\combo_arrow.png" />
+    <Content Include="Content\jeasyui\themes\default\images\datagrid_icons.png" />
+    <Content Include="Content\jeasyui\themes\default\images\datebox_arrow.png" />
+    <Content Include="Content\jeasyui\themes\default\images\layout_arrows.png" />
+    <Content Include="Content\jeasyui\themes\default\images\linkbutton_bg.png" />
+    <Content Include="Content\jeasyui\themes\default\images\loading.gif" />
+    <Content Include="Content\jeasyui\themes\default\images\menu_arrows.png" />
+    <Content Include="Content\jeasyui\themes\default\images\messager_icons.png" />
+    <Content Include="Content\jeasyui\themes\default\images\pagination_icons.png" />
+    <Content Include="Content\jeasyui\themes\default\images\panel_tools.png" />
+    <Content Include="Content\jeasyui\themes\default\images\searchbox_button.png" />
+    <Content Include="Content\jeasyui\themes\default\images\slider_handle.png" />
+    <Content Include="Content\jeasyui\themes\default\images\spinner_arrows.png" />
+    <Content Include="Content\jeasyui\themes\default\images\tabs_icons.png" />
+    <Content Include="Content\jeasyui\themes\default\images\tree_icons.png" />
+    <Content Include="Content\jeasyui\themes\default\images\validatebox_arrows.png" />
+    <Content Include="Content\jeasyui\themes\default\images\validatebox_warning.png" />
+    <Content Include="Content\jeasyui\themes\default\layout.css" />
+    <Content Include="Content\jeasyui\themes\default\linkbutton.css" />
+    <Content Include="Content\jeasyui\themes\default\menu.css" />
+    <Content Include="Content\jeasyui\themes\default\menubutton.css" />
+    <Content Include="Content\jeasyui\themes\default\messager.css" />
+    <Content Include="Content\jeasyui\themes\default\pagination.css" />
+    <Content Include="Content\jeasyui\themes\default\panel.css" />
+    <Content Include="Content\jeasyui\themes\default\progressbar.css" />
+    <Content Include="Content\jeasyui\themes\default\propertygrid.css" />
+    <Content Include="Content\jeasyui\themes\default\searchbox.css" />
+    <Content Include="Content\jeasyui\themes\default\slider.css" />
+    <Content Include="Content\jeasyui\themes\default\spinner.css" />
+    <Content Include="Content\jeasyui\themes\default\splitbutton.css" />
+    <Content Include="Content\jeasyui\themes\default\tabs.css" />
+    <Content Include="Content\jeasyui\themes\default\tree.css" />
+    <Content Include="Content\jeasyui\themes\default\validatebox.css" />
+    <Content Include="Content\jeasyui\themes\default\window.css" />
+    <Content Include="Content\jeasyui\themes\gray\accordion.css" />
+    <Content Include="Content\jeasyui\themes\gray\calendar.css" />
+    <Content Include="Content\jeasyui\themes\gray\combo.css" />
+    <Content Include="Content\jeasyui\themes\gray\combobox.css" />
+    <Content Include="Content\jeasyui\themes\gray\datagrid.css" />
+    <Content Include="Content\jeasyui\themes\gray\datebox.css" />
+    <Content Include="Content\jeasyui\themes\gray\dialog.css" />
+    <Content Include="Content\jeasyui\themes\gray\easyui.css" />
+    <Content Include="Content\jeasyui\themes\gray\images\accordion_arrows.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\blank.gif" />
+    <Content Include="Content\jeasyui\themes\gray\images\calendar_arrows.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\combo_arrow.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\datagrid_icons.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\layout_arrows.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\loading.gif" />
+    <Content Include="Content\jeasyui\themes\gray\images\menu_arrows.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\messager_icons.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\pagination_icons.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\panel_tools.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\searchbox_button.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\slider_handle.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\spinner_arrows.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\tabs_icons.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\tree_icons.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\validatebox_arrows.png" />
+    <Content Include="Content\jeasyui\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Content\jeasyui\themes\gray\layout.css" />
+    <Content Include="Content\jeasyui\themes\gray\linkbutton.css" />
+    <Content Include="Content\jeasyui\themes\gray\menu.css" />
+    <Content Include="Content\jeasyui\themes\gray\menubutton.css" />
+    <Content Include="Content\jeasyui\themes\gray\messager.css" />
+    <Content Include="Content\jeasyui\themes\gray\pagination.css" />
+    <Content Include="Content\jeasyui\themes\gray\panel.css" />
+    <Content Include="Content\jeasyui\themes\gray\progressbar.css" />
+    <Content Include="Content\jeasyui\themes\gray\propertygrid.css" />
+    <Content Include="Content\jeasyui\themes\gray\searchbox.css" />
+    <Content Include="Content\jeasyui\themes\gray\slider.css" />
+    <Content Include="Content\jeasyui\themes\gray\spinner.css" />
+    <Content Include="Content\jeasyui\themes\gray\splitbutton.css" />
+    <Content Include="Content\jeasyui\themes\gray\tabs.css" />
+    <Content Include="Content\jeasyui\themes\gray\tree.css" />
+    <Content Include="Content\jeasyui\themes\gray\validatebox.css" />
+    <Content Include="Content\jeasyui\themes\gray\window.css" />
+    <Content Include="Content\jeasyui\themes\icon.css" />
+    <Content Include="Content\jeasyui\themes\icons\audit.png" />
+    <Content Include="Content\jeasyui\themes\icons\back.png" />
+    <Content Include="Content\jeasyui\themes\icons\blank.gif" />
+    <Content Include="Content\jeasyui\themes\icons\cancel.png" />
+    <Content Include="Content\jeasyui\themes\icons\continue.png" />
+    <Content Include="Content\jeasyui\themes\icons\cut.png" />
+    <Content Include="Content\jeasyui\themes\icons\detail.png" />
+    <Content Include="Content\jeasyui\themes\icons\edit_add.png" />
+    <Content Include="Content\jeasyui\themes\icons\edit_remove.png" />
+    <Content Include="Content\jeasyui\themes\icons\filesave.png" />
+    <Content Include="Content\jeasyui\themes\icons\help.png" />
+    <Content Include="Content\jeasyui\themes\icons\lock.png" />
+    <Content Include="Content\jeasyui\themes\icons\login.png" />
+    <Content Include="Content\jeasyui\themes\icons\mini_add.png" />
+    <Content Include="Content\jeasyui\themes\icons\mini_edit.png" />
+    <Content Include="Content\jeasyui\themes\icons\mini_refresh.png" />
+    <Content Include="Content\jeasyui\themes\icons\movebottom.png" />
+    <Content Include="Content\jeasyui\themes\icons\movedown.png" />
+    <Content Include="Content\jeasyui\themes\icons\movetop.png" />
+    <Content Include="Content\jeasyui\themes\icons\moveup.png" />
+    <Content Include="Content\jeasyui\themes\icons\no.png" />
+    <Content Include="Content\jeasyui\themes\icons\ok.png" />
+    <Content Include="Content\jeasyui\themes\icons\pencil.png" />
+    <Content Include="Content\jeasyui\themes\icons\pep.png" />
+    <Content Include="Content\jeasyui\themes\icons\print.png" />
+    <Content Include="Content\jeasyui\themes\icons\redo.png" />
+    <Content Include="Content\jeasyui\themes\icons\reload.png" />
+    <Content Include="Content\jeasyui\themes\icons\search.png" />
+    <Content Include="Content\jeasyui\themes\icons\sum.png" />
+    <Content Include="Content\jeasyui\themes\icons\tip.png" />
+    <Content Include="Content\jeasyui\themes\icons\undo.png" />
+    <Content Include="Content\jeasyui\themes\metro\accordion.css" />
+    <Content Include="Content\jeasyui\themes\metro\calendar.css" />
+    <Content Include="Content\jeasyui\themes\metro\combo.css" />
+    <Content Include="Content\jeasyui\themes\metro\combobox.css" />
+    <Content Include="Content\jeasyui\themes\metro\datagrid.css" />
+    <Content Include="Content\jeasyui\themes\metro\datebox.css" />
+    <Content Include="Content\jeasyui\themes\metro\dialog.css" />
+    <Content Include="Content\jeasyui\themes\metro\easyui.css" />
+    <Content Include="Content\jeasyui\themes\metro\images\accordion_arrows.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\blank.gif" />
+    <Content Include="Content\jeasyui\themes\metro\images\calendar_arrows.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\combo_arrow.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\datagrid_icons.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\layout_arrows.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\loading.gif" />
+    <Content Include="Content\jeasyui\themes\metro\images\menu_arrows.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\messager_icons.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\pagination_icons.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\panel_tools.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\searchbox_button.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\slider_handle.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\spinner_arrows.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\tabs_icons.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\tree_icons.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\validatebox_arrows.png" />
+    <Content Include="Content\jeasyui\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Content\jeasyui\themes\metro\layout.css" />
+    <Content Include="Content\jeasyui\themes\metro\linkbutton.css" />
+    <Content Include="Content\jeasyui\themes\metro\menu.css" />
+    <Content Include="Content\jeasyui\themes\metro\menubutton.css" />
+    <Content Include="Content\jeasyui\themes\metro\messager.css" />
+    <Content Include="Content\jeasyui\themes\metro\pagination.css" />
+    <Content Include="Content\jeasyui\themes\metro\panel.css" />
+    <Content Include="Content\jeasyui\themes\metro\progressbar.css" />
+    <Content Include="Content\jeasyui\themes\metro\propertygrid.css" />
+    <Content Include="Content\jeasyui\themes\metro\searchbox.css" />
+    <Content Include="Content\jeasyui\themes\metro\slider.css" />
+    <Content Include="Content\jeasyui\themes\metro\spinner.css" />
+    <Content Include="Content\jeasyui\themes\metro\splitbutton.css" />
+    <Content Include="Content\jeasyui\themes\metro\tabs.css" />
+    <Content Include="Content\jeasyui\themes\metro\tree.css" />
+    <Content Include="Content\jeasyui\themes\metro\validatebox.css" />
+    <Content Include="Content\jeasyui\themes\metro\window.css" />
+    <Content Include="Content\My97DatePicker\calendar.js" />
+    <Content Include="Content\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="Content\My97DatePicker\skin\blue\bg.jpg" />
+    <Content Include="Content\My97DatePicker\skin\blue\btnbg.jpg" />
+    <Content Include="Content\My97DatePicker\skin\blue\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\blue\down.jpg" />
+    <Content Include="Content\My97DatePicker\skin\blue\left.gif" />
+    <Content Include="Content\My97DatePicker\skin\blue\navLeft.gif" />
+    <Content Include="Content\My97DatePicker\skin\blue\navRight.gif" />
+    <Content Include="Content\My97DatePicker\skin\blue\qs.jpg" />
+    <Content Include="Content\My97DatePicker\skin\blue\right.gif" />
+    <Content Include="Content\My97DatePicker\skin\blue\up.jpg" />
+    <Content Include="Content\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Content\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\ext\dateselect.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\glass-bg.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\hd-sprite.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\img.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\left-btn.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\left-btn2.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\right-btn.gif" />
+    <Content Include="Content\My97DatePicker\skin\ext\right-btn2.gif" />
+    <Content Include="Content\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Content\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Content\My97DatePicker\WdatePicker.js" />
+    <Content Include="css\bootstrap-responsive.css" />
+    <Content Include="css\bootstrap-responsive.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\Logo.ico" />
+    <Content Include="img\topbg.png" />
+    <Content Include="img\welcome.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="welcome.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MVC.DAL\MVC.DAL.csproj">
+      <Project>{a56c86da-3b1c-43b5-a851-a798ad276035}</Project>
+      <Name>MVC.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC.Model\MVC.Model.csproj">
+      <Project>{ea932513-5584-4a6d-a7f5-07a91d295552}</Project>
+      <Name>MVC.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\jeasyui\themes\black\images\Thumbs.db" />
+    <Content Include="Content\jeasyui\themes\bootstrap\images\Thumbs.db" />
+    <Content Include="Content\jeasyui\themes\default\images\Thumbs.db" />
+    <Content Include="Content\jeasyui\themes\gray\images\Thumbs.db" />
+    <Content Include="Content\jeasyui\themes\metro\images\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\UserInfo\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3793</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:3793/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
